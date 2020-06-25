@@ -21,7 +21,13 @@ if [[ $(uname) == "Darwin" ]]; then
 	Due to macOS security restrictions, the GDB executable 
 	needs to be codesigned to be able to control other processes.
 
-	This process requires administrative permissions 
+	The codesigning process requires the Command Line Tools
+	(or a full XCode installation). To install the Command Line
+	Tools, run
+	
+	  xcode-select --install
+	
+	The codesigning process also requires administrative permissions
 	(your user must be able to run \`sudo\`).
 
 	To codesign GDB, simply run the included script:
