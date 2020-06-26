@@ -3,7 +3,7 @@ About gdb
 
 Home: https://www.gnu.org/software/gdb/
 
-Package license: GPL-2.0
+Package license: GPL-3.0-only
 
 Feedstock license: BSD 3-Clause
 

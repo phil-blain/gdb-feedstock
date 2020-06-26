@@ -5,7 +5,7 @@ c_compiler_version:
 channel_sources:
 - conda-forge,defaults
 channel_targets:
-- conda-forge main
+- phil-blain test
 cxx_compiler:
 - gxx
 cxx_compiler_version:
@@ -16,13 +16,9 @@ fortran_compiler:
 - gfortran
 fortran_compiler_version:
 - '7'
-libiconv:
-- '1.15'
 ncurses:
 - '6.1'
 pin_run_as_build:
-  libiconv:
-    max_pin: x.x
   ncurses:
     max_pin: x.x
   python:

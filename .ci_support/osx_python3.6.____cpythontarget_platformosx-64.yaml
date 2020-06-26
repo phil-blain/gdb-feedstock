@@ -7,11 +7,13 @@ c_compiler_version:
 channel_sources:
 - conda-forge,defaults
 channel_targets:
-- conda-forge main
+- phil-blain test
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
 - '9'
+expat:
+- '2.2'
 fortran_compiler:
 - gfortran
 fortran_compiler_version:
@@ -25,6 +27,8 @@ macos_min_version:
 ncurses:
 - '6.1'
 pin_run_as_build:
+  expat:
+    max_pin: x.x
   libiconv:
     max_pin: x.x
   ncurses:
