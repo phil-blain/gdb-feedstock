@@ -10,8 +10,11 @@ source:
   sha256: 1e55b4d7cdca7b34be12f4ceae651623aa73b2fd640152313f9f66a7149757c4
 
 build:
-  number: 1
-  skip: True  # [win or osx]
+  number: 2
+  skip: True  # [win]
+  # needed by macOS codesigning script
+  script_env:
+   - TMPDIR
 
 requirements:
   build:
@@ -24,21 +27,27 @@ requirements:
     - texinfo
     - xz
     - zlib
+    - libiconv  # [osx]
+    - expat     # [osx]
   run:
     - python
     - ncurses
     - xz
     - zlib
+    - libiconv  # [osx]
+    - expat     # [osx]
 
 test:
   commands:
     - gdb --version
+  requires:
+    - {{ compiler('c') }}
 
 about:
   home: https://www.gnu.org/software/gdb/
-  license: GPL-2.0
+  license: GPL-3.0-only
   license_family: GPL
-  license_file: COPYING
+  license_file: gdb/COPYING
   summary: GDB, the GNU Project debugger, allows you to see what is going on inside another program while it executes -- or what another program was doing at the moment it crashed.
   description: |
     GDB, the GNU Project debugger, allows you to see what is going on `inside'
